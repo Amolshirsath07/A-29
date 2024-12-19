@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Assignment-29</title>
+</head>
+<body>
+    <h1 class="text-center">Text Operations</h1>
+    <input type="text" id="input" placeholder="Enter Text to perform operation" class="text-box">
+    <input type="text" id="output" placeholder="See Output here" class="text-box">
+    <div class="action-container">
+        <button type="button" class="btn-action" onclick="textoperation('uuppercase')">Upper Case</button>
+        <button type="button" class="btn-action" onclick="textoperation('lowercase')">Lower Case</button>
+        <button type="button" class="btn-action" onclick="textoperation('wordcount')">Word Count</button>
+        <button type="button" class="btn-action" onclick="textoperation('charactercount')">Character Count</button>
+    </div>
+    <script>
+        function textoperation(op){
+            const inputelement = document.getElementById('input');
+            const outputelement = document.getElementById('output');
+
+            if(op =="uuppercase"){
+                const inputtext = inputelement.value;
+                outputelement.value = inputtext.toUpperCase();
+            }
+            else if(op == "lowercase"){
+                outputelement.value = inputelement.value.toLowerCase();
+            }
+            else if(op == "wordcount"){
+                const totalword = inputelement.value.split(" ").length;
+            outputelement.value = `word count : ${totalword}`;
+            }
+            else if(op == "charactercount"){
+                outputelement.value = `character count : ${inputelement.value.length}`;
+            }
+        }
+    </script>
+</body>
+</html>
